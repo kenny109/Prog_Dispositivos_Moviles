@@ -15,9 +15,9 @@ fun main(){
     val puntuacion = readln()?.toIntOrNull() ?:0
 
     println("Ingrese el salario")
-    val salarioMensual = readln()?.toDoubleOrNull() ?:0
+    val salarioMensual = readln()?.toDoubleOrNull() ?:0.0
 
-    if (puntuacion == null || puntuacion !in 0..10 || salarioMensual == null || salarioMensual <= 0) {
+    if (puntuacion == null || puntuacion !in 0..10 || salarioMensual == null || salarioMensual <= 0.0) {
         println("Datos inválidos. Asegúrese de que la puntuación esté entre 0 y 10 y el salario sea positivo.")
         return
     }
