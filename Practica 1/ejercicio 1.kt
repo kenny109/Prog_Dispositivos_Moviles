@@ -1,3 +1,12 @@
+/*
+Ejercicio 1: En una determinada empresa, sus empleados son evaluados cada seis meses.
+Los puntos que pueden obtener comienzan en 0 y pueden ir aumentando hasta llegar a 10
+La cantidad de dinero se calcula multiplicando el salario mensual por la  división de la puntuación del nivel divida entre 10.
+Escribir un programa que lea la puntuación y su salario mensual e imprima su nivel de rendimiento y cantidad de dinero que recibirá
+
+Autor: Kenny Luis Flores Chacón
+Fecha creación: 24/08/2024
+*/
 fun calcularDineroRecibido(salarioMensual: Double, puntuacion: Int): Double {
     return salarioMensual * (puntuacion / 10.0)
 }
