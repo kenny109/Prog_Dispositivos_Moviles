@@ -16,11 +16,16 @@ fun determinarResultadoJuego(eleccionUser: String, eleccionComputer: String): St
 
 }
 fun main (){
-    val eleccionComputadora = elegirOpcionComputadora()
-    println("la computadora eligio: ${eleccionComputadora}")
 
     println("Elige una opción: Piedra, Papel o Tijera: " )
     val eleccionUsuario = readLine()?.capitalize() ?: ""
+
+    if (eleccionUsuario !in listOf("Piedra", "Papel", "Tijera")) {
+        println("Elección inválida. Debes elegir Piedra, Papel o Tijera.")
+        return
+    }
+    val eleccionComputadora = elegirOpcionComputadora()
+    println("la computadora eligio: ${eleccionComputadora}")
 
     val resultado = determinarResultadoJuego(eleccionUsuario, eleccionComputadora)
 
