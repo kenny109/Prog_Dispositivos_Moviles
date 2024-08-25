@@ -1,3 +1,9 @@
+/*
+Ejercicio 1: Programa para simular el juego de piedra papel o tijera contra la computadora
+Autor: Kenny Luis Flores Chacón
+Fecha creación: 24/08/2024
+Fecha de ultima modificación: 25/08/2024
+*/
 import kotlin.random.Random
 
 fun elegirOpcionComputadora(): String {
