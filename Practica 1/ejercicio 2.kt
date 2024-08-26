@@ -10,7 +10,6 @@ fun elegirOpcionComputadora(): String {
     val opciones = listOf("Piedra", "Papel", "Tijera")
     return opciones[Random.nextInt(opciones.size)]
 }
-
 fun determinarResultadoJuego(eleccionUser: String, eleccionComputer: String): String{
     return when{
         eleccionUser == eleccionComputer -> "Empate"
@@ -19,21 +18,16 @@ fun determinarResultadoJuego(eleccionUser: String, eleccionComputer: String): St
                 (eleccionUser == "Tijera" && eleccionComputer == "Papel") -> "Ganaste"
         else -> "Perdiste"
     }
-
 }
 fun main (){
-
     println("Elige una opción: Piedra, Papel o Tijera: " )
     val eleccionUsuario = readLine()?.capitalize() ?: ""
-
     if (eleccionUsuario !in listOf("Piedra", "Papel", "Tijera")) {
         println("Elección inválida. Debes elegir Piedra, Papel o Tijera.")
         return
     }
     val eleccionComputadora = elegirOpcionComputadora()
     println("la computadora eligio: ${eleccionComputadora}")
-
     val resultado = determinarResultadoJuego(eleccionUsuario, eleccionComputadora)
-
     println("Resultado: $resultado")
 }
