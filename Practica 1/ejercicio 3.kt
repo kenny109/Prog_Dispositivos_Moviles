@@ -1,3 +1,10 @@
+/*
+Ejercicio 3: Programa que simula las funciones basicas de una calculadora
+(suma, resta, multiplicación, división), segun la opción elegida por el usuario en el menú
+Autor: Kenny Luis Flores Chacón
+Fecha de inicio: 25/08/2024
+Ultima modificación: 25/08/2024
+*/
 fun mostrarMenu(){
     println("==== Menú ====")
     println("1. Suma")
@@ -47,7 +54,7 @@ fun main(){
         if (opcion == 4 && num2 == 0.0) {
             println("Error: No se puede dividir entre cero.")
         } else {
-            println("El resultado es: $resultado")
+            println("El resultado es:  ${"%.2f".format(resultado)}")
         }
     }
 }
