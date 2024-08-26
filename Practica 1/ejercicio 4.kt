@@ -1,3 +1,10 @@
+/*
+Ejercicio 4: Programa que le solicita al usuario que adivine el numero random que
+genera la computadora
+Autor: Kenny Luis Flores Chacón
+Fecha de inicio: 25/08/2024
+Ultima modificación:25/08/2024
+*/
 import kotlin.random.Random
 
 fun generarNumeroAleatorio ():Int{
@@ -7,7 +14,7 @@ fun generarNumeroAleatorio ():Int{
 fun main(){
     val numeroRandom = generarNumeroAleatorio()
     var intentos = 5
-
+    println("He generado un número entre 1 y 30. ¡Intenta adivinarlo!")
     while(intentos>0){
         println("Ingresa tu numero: ")
         val numero = readLine()?.toIntOrNull()
@@ -28,8 +35,10 @@ fun main(){
         }
 
         intentos--
-        println("Te quedan $intentos intentos! ")
+        if (intentos > 0) {
+            println("Te quedan $intentos intentos!")
+        } else {
+            println("Game Over. El número era $numeroRandom.")
+        }
     }
-
-    println(numeroRandom)
 }
