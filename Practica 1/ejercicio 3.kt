@@ -43,5 +43,11 @@ fun main(){
             4 -> dividir(num1, num2)
             else -> null
         }
+
+        if (opcion == 4 && num2 == 0.0) {
+            println("Error: No se puede dividir entre cero.")
+        } else {
+            println("El resultado es: $resultado")
+        }
     }
 }
