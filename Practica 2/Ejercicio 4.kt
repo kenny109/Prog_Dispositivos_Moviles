@@ -50,3 +50,12 @@ class Revista(
 }
 
 data class Usuario(val nombre: String, val apellido: String, val edad: Int)
+
+interface IBiblioteca {
+    fun registrarMaterial(material: Material)
+    fun registrarUsuario(usuario: Usuario)
+    fun prestarMaterial(material: Material, usuario: Usuario)
+    fun devolverMaterial(material: Material, usuario: Usuario)
+    fun mostrarMaterialesDisponibles()
+    fun mostrarMaterialesReservadosPorUsuario(usuario: Usuario)
+}
