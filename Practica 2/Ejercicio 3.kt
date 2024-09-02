@@ -45,3 +45,14 @@ class Rectangulo(private val largo: Double, private val ancho: Double) : Shape()
         return 2 * (largo + ancho)
     }
 }
+
+fun main() {
+    val cuadrado = Cuadrado(5.0)
+    cuadrado.imprimirResultados()
+
+    val circulo = Circulo(3.0)
+    circulo.imprimirResultados()
+
+    val rectangulo = Rectangulo(4.0, 6.0)
+    rectangulo.imprimirResultados()
+}
