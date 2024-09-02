@@ -102,3 +102,20 @@ class Biblioteca : IBiblioteca {
         usuarios[usuario]?.forEach { it.mostrarDetalles() }
     }
 }
+
+fun main() {
+    val libro = Libro("1984", "George Orwell", 1949, "Distopía", 328)
+    val revista = Revista("National Geographic", "Varios", 2021, "0027-9358", 196, 5, "National Geographic Society")
+
+    val usuario = Usuario("Juan", "Pérez", 30)
+
+    val biblioteca = Biblioteca()
+    biblioteca.registrarMaterial(libro)
+    biblioteca.registrarMaterial(revista)
+    biblioteca.registrarUsuario(usuario)
+
+    biblioteca.prestarMaterial(libro, usuario)
+    biblioteca.mostrarMaterialesReservadosPorUsuario(usuario)
+    biblioteca.devolverMaterial(libro, usuario)
+    biblioteca.mostrarMaterialesDisponibles()
+}
