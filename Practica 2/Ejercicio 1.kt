@@ -5,7 +5,7 @@
 
 class CuentaBancaria(private var saldo: Double, private var limiteRetiro: Double) {
     //Metodo get para obtener el saldo
-    fun getSaldo(): Dobble{
+    fun getSaldo(): Double{
         return saldo
     }
     //Metodo set para establecer un nuevo saldo
@@ -14,6 +14,16 @@ class CuentaBancaria(private var saldo: Double, private var limiteRetiro: Double
             saldo = nuevoSaldo
         } else {
             println("El saldo no puede ser negativo")
+        }
+    }
+    fun retirar(cantidad: Double){
+        if(cantidad > limiteRetiro){
+            println("No se puede retirar más del limite permitido")
+        } else if(cantidad> saldo){
+            println("Fondos insuficientes")
+        } else {
+            saldo -= cantidad
+            println("Retiro exitoso, su saldo actual es: $$saldo")
         }
     }
 }
