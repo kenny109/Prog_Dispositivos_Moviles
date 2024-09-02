@@ -23,3 +23,14 @@ class Cuadrado(private val lado: Double) : Shape() {
         return 4 * lado
     }
 }
+
+class Circulo(private val radio: Double) : Shape() {
+
+    override fun calcularArea(): Double {
+        return Math.PI * radio * radio
+    }
+
+    override fun calcularPerimetro(): Double {
+        return 2 * Math.PI * radio
+    }
+}
