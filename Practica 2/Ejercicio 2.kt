@@ -27,4 +27,8 @@ class Producto(private var precio: Double, private var descuento: Double) {
             println("El descuento debe estar entre 0 y 100%.")
         }
     }
+
+    fun calcularPrecioFinal(): Double{
+        return precio * (1-descuento / 100)
+    }
 }
