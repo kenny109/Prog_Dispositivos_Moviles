@@ -59,3 +59,46 @@ interface IBiblioteca {
     fun mostrarMaterialesDisponibles()
     fun mostrarMaterialesReservadosPorUsuario(usuario: Usuario)
 }
+
+class Biblioteca : IBiblioteca {
+    private val materialesDisponibles = mutableListOf<Material>()
+    private val usuarios = mutableMapOf<Usuario, MutableList<Material>>()
+
+    override fun registrarMaterial(material: Material) {
+        materialesDisponibles.add(material)
+    }
+
+    override fun registrarUsuario(usuario: Usuario) {
+        usuarios[usuario] = mutableListOf()
+    }
+
+    override fun prestarMaterial(material: Material, usuario: Usuario) {
+        if (material in materialesDisponibles) {
+            materialesDisponibles.remove(material)
+            usuarios[usuario]?.add(material)
+            println("Material prestado: ${material.titulo} a ${usuario.nombre} ${usuario.apellido}")
+        } else {
+            println("El material no está disponible.")
+        }
+    }
+
+    override fun devolverMaterial(material: Material, usuario: Usuario) {
+        if (material in usuarios[usuario] ?: mutableListOf()) {
+            usuarios[usuario]?.remove(material)
+            materialesDisponibles.add(material)
+            println("Material devuelto: ${material.titulo} por ${usuario.nombre} ${usuario.apellido}")
+        } else {
+            println("El usuario no tiene este material en préstamo.")
+        }
+    }
+
+    override fun mostrarMaterialesDisponibles() {
+        println("Materiales disponibles:")
+        materialesDisponibles.forEach { it.mostrarDetalles() }
+    }
+
+    override fun mostrarMaterialesReservadosPorUsuario(usuario: Usuario) {
+        println("Materiales reservados por ${usuario.nombre} ${usuario.apellido}:")
+        usuarios[usuario]?.forEach { it.mostrarDetalles() }
+    }
+}
