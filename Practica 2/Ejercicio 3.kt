@@ -34,3 +34,14 @@ class Circulo(private val radio: Double) : Shape() {
         return 2 * Math.PI * radio
     }
 }
+
+class Rectangulo(private val largo: Double, private val ancho: Double) : Shape() {
+
+    override fun calcularArea(): Double {
+        return largo * ancho
+    }
+
+    override fun calcularPerimetro(): Double {
+        return 2 * (largo + ancho)
+    }
+}
