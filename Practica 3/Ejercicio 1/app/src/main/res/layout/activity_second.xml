@@ -13,12 +13,10 @@
         android:src="@drawable/imagen1"
         android:src2="@drawable/imagen2"
         android:src3="@drawable/imagen3" />
-    />
-    />
+
     <Button
         android:id="@+id/back_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/back_button"
         android:layout_marginTop="16dp"/>
 </LinearLayout>
