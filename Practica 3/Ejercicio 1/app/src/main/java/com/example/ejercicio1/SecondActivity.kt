@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 
-class SecondActivity(contentLayoutId: Int) : AppCompatActivity(contentLayoutId) {
+class SecondActivity: AppCompatActivity() {
 
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
