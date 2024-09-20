@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 
-class SecondActivity: AppCompatActivity {
+class SecondActivity(contentLayoutId: Int) : AppCompatActivity(contentLayoutId) {
 
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
@@ -20,9 +20,9 @@ class SecondActivity: AppCompatActivity {
         val selectedImage = intent.getIntExtra("selectedImage", 0)
 
         when (selectedImage) {
-            0 -> imageView.setImageResource(R.drawable.image1)
-            1 -> imageView.setImageResource(R.drawable.image2)
-            2 -> imageView.setImageResource(R.drawable.image3)
+            0 -> imageView.setImageResource(R.drawable.imagen1)
+            1 -> imageView.setImageResource(R.drawable.imagen2)
+            2 -> imageView.setImageResource(R.drawable.imagen3)
         }
 
         backButton.setOnClickListener {
