@@ -25,6 +25,7 @@ class SecondActivity: AppCompatActivity() {
             2 -> imageView.setImageResource(R.drawable.imagen3)
         }
 
+
         backButton.setOnClickListener {
             finish()
         }
