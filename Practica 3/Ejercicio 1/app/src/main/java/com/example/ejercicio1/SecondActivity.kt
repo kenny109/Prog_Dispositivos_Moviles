@@ -9,7 +9,7 @@ class SecondActivity: AppCompatActivity() {
 
     private lateinit var imageView: ImageView
     private lateinit var backButton: Button
-
+    private var selectedImage= 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -17,8 +17,11 @@ class SecondActivity: AppCompatActivity() {
         imageView = findViewById(R.id.selected_image)
         backButton = findViewById(R.id.back_button)
 
-        val selectedImage = intent.getIntExtra("selectedImage", 0)
-
+        if (savedInstanceState != null) {
+            selectedImage = savedInstanceState.getInt("selectedImage")
+        } else {
+            selectedImage = intent.getIntExtra("selectedImage", 0)
+        }
         when (selectedImage) {
             0 -> imageView.setImageResource(R.drawable.imagen1)
             1 -> imageView.setImageResource(R.drawable.imagen2)
@@ -29,5 +32,9 @@ class SecondActivity: AppCompatActivity() {
         backButton.setOnClickListener {
             finish()
         }
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("selectedImage", selectedImage)
     }
 }
