@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Ejercicio 2</string>
+    <string name="select_audio">Selecciona un audio</string>
+    <string name="select_button">Seleccionar</string>
+    <string name="play_button">Reproducir</string>
+    <string name="pause_button">Pausar</string>
+    <string name="stop_button">Detener</string>
+
+    <string name="audio_1">Audio 1</string>
+    <string name="audio_2">Audio 2</string>
+    <string name="audio_3">Audio 3</string>
+    <string name="audio_4">Audio 4</string>
+    <string name="audio_5">Audio 5</string>
 </resources>
