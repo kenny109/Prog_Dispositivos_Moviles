@@ -1,3 +1,8 @@
+// Descripción: Actividad principal con spinner para seleccionar imágenes y un botón para pasar a la siguiente actividad
+// Autor: Kenny Luis Flores Chacón
+// Fecha de creación: 19-09-2024
+// Fecha de última modificación: 21-09-2024
+
 package com.example.ejercicio1
 
 import androidx.appcompat.app.AppCompatActivity
