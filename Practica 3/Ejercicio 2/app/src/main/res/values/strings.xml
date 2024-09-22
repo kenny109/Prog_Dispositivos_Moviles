@@ -6,9 +6,9 @@
     <string name="pause_button">Pausar</string>
     <string name="stop_button">Detener</string>
 
-    <string name="audio_1">Audio 1</string>
-    <string name="audio_2">Audio 2</string>
-    <string name="audio_3">Audio 3</string>
-    <string name="audio_4">Audio 4</string>
-    <string name="audio_5">Audio 5</string>
+    <string name="audio_1">Alan_walker-Faded.mp3</string>
+    <string name="audio_2">The_Weeknd-Blinding_Lights.mp3</string>
+    <string name="audio_3">The_Weeknd-Save_Your_Tears.mp3</string>
+    <string name="audio_4">Daddy_Yankee-Con_Calma.mp3</string>
+    <string name="audio_5">Ed_Sheeran-Shape_of_You.mp3</string>
 </resources>
