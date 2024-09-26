@@ -18,7 +18,7 @@ class PlayerActivity : AppCompatActivity() {
     private lateinit var audioNameTextView: TextView
     private lateinit var playButton: Button
     private lateinit var pauseButton: Button
-    private lateinit var stopButton: Button
+    private lateinit var backButton: Button
     private var mediaPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class PlayerActivity : AppCompatActivity() {
         audioNameTextView = findViewById(R.id.audio_name)
         playButton = findViewById(R.id.play_button)
         pauseButton = findViewById(R.id.pause_button)
-        stopButton = findViewById(R.id.stop_button)
+        backButton = findViewById(R.id.back_button)
 
         val selectedAudio = intent.getIntExtra("selectedAudio", 0)
         val selectedImage = intent.getIntExtra("selectedImage", R.drawable.default_image)
@@ -61,11 +61,9 @@ class PlayerActivity : AppCompatActivity() {
             mediaPlayer?.pause()
         }
 
-        // Botón de detener
-        stopButton.setOnClickListener {
-            mediaPlayer?.stop()
-            mediaPlayer?.reset()
-            mediaPlayer = MediaPlayer.create(this, audioFiles[selectedAudio])
+        // Botón de volver
+        backButton.setOnClickListener {
+           finish()
         }
     }
 
