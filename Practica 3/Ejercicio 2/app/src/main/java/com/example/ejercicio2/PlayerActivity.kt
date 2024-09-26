@@ -1,7 +1,8 @@
-// Descripción: Actividad para reproducir el audio seleccionado con controles de reproducción
+// Descripción: Actividad para reproducir el audio seleccionado con controles
+// de reproducción
 // Autor: Kenny Luis Flores Chacón
 // Fecha de creación: 21-09-2024
-// Fecha de última modificación: 21-09-2024
+// Fecha de última modificación: 25-09-2024
 
 package com.example.ejercicio2
 

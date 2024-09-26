@@ -1,7 +1,8 @@
-// Descripción: Actividad principal con spinner para seleccionar un audio y un botón para pasar a la siguiente actividad
+// Descripción: Actividad principal con spinner para seleccionar un audio y un botón para pasar a
+// la siguiente actividad
 // Autor: Kenny Luis Flores Chacón
 // Fecha de creación: 21-09-2024
-// Fecha de última modificación: 21-09-2024
+// Fecha de última modificación: 25-09-2024
 
 package com.example.ejercicio2
 
