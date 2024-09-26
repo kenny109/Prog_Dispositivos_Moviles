@@ -7,6 +7,8 @@ package com.example.ejercicio2
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ImageView
@@ -51,9 +53,13 @@ class MainActivity : AppCompatActivity() {
         spinner.adapter = adapter
 
         // Cambiar la imagen cada vez que se seleccione un audio diferente
-        spinner.setOnItemSelectedListener {
-            val selectedPosition = spinner.selectedItemPosition
-            imageView.setImageResource(audioImages[selectedPosition])
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                imageView.setImageResource(audioImages[position])
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
         }
 
         // Botón de selección para ir a PlayerActivity
