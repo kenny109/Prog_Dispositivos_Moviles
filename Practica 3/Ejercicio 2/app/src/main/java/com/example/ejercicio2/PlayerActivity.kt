@@ -57,7 +57,10 @@ class PlayerActivity : AppCompatActivity() {
         // Inicializar MediaPlayer con el archivo de audio seleccionado
         mediaPlayer = MediaPlayer.create(this, audioFiles[selectedAudio])
 
+        seekBar.max = mediaPlayer?.duration ?: 0
+
         handler = Handler()
+
         runnable = Runnable {
             val currentPosition = mediaPlayer?.currentPosition ?: 0
             seekBar.progress = currentPosition
