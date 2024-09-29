@@ -2,7 +2,7 @@ package com.example.p4_ejercicio1
 
 // Descripción: Fragmento para mostrar la imagen seleccionada y un botón para regresar al fragmento anterior
 // Autor: Kenny Luis Flores Chacón
-// Fecha de creación: 21-09-2024
+// Fecha de creación: 28-09-2024
 // Fecha de última modificación: 28-09-2024
 
 import android.os.Bundle
