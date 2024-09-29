@@ -13,12 +13,20 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.SeekBar
+import android.widget.TextView
+import androidx.activity.result.launch
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.p4_ejercicio2.R
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class FragmentMusicPlayer : Fragment() {
 
     private lateinit var songImageView: ImageView
+    private lateinit var songNameTextView: TextView
     private lateinit var playButton: Button
     private lateinit var pauseButton: Button
     private lateinit var backButton: Button
@@ -34,6 +42,7 @@ class FragmentMusicPlayer : Fragment() {
         val view = inflater.inflate(R.layout.fragment_music_player, container, false)
 
         songImageView = view.findViewById(R.id.song_image_view)
+        songNameTextView = view.findViewById(R.id.audio_name)
         playButton = view.findViewById(R.id.play_button)
         pauseButton = view.findViewById(R.id.pause_button)
         backButton = view.findViewById(R.id.back_button)
@@ -55,20 +64,23 @@ class FragmentMusicPlayer : Fragment() {
             4 -> MediaPlayer.create(context, R.raw.ed_sheeran_shape_of_you)
             else -> MediaPlayer.create(context, R.raw.alan_walker_faded)
         }
-
+        //Botón para reproducir la canción
         playButton.setOnClickListener {
             mediaPlayer.start()
             updateSeekBar()
         }
-
+        //Botón para pausar la canción
         pauseButton.setOnClickListener {
             mediaPlayer.pause()
         }
-
+        //Botón para volver
         backButton.setOnClickListener {
             mediaPlayer.stop()
+            mediaPlayer.release()
             requireActivity().supportFragmentManager.popBackStack()
+
         }
+
 
         // Configuración de la SeekBar
         seekBar.max = mediaPlayer.duration
@@ -85,25 +97,48 @@ class FragmentMusicPlayer : Fragment() {
 
         return view
     }
+// Método para actualizar el SeekBar mientras la canción se reproduce
 
     private fun updateSeekBar() {
-        seekBar.progress = mediaPlayer.currentPosition
-        if (mediaPlayer.isPlaying) {
-            handler.postDelayed({ updateSeekBar() }, 1000)
+        lifecycleScope.launch {
+            while (true) {
+                if (mediaPlayer?.isPlaying == true) {
+                    withContext(Dispatchers.Main) {
+                        seekBar.progress = mediaPlayer?.currentPosition ?: 0
+                    }
+                }
+                delay(100) // Update every 100ms
+            }
         }
     }
-
+// Método para actualizar el nombre y la imagen de la canción
     private fun updateSongImage(selectedSong: Int) {
         when (selectedSong) {
-            0 -> songImageView.setImageResource(R.drawable.audio_image_1)
-            1 -> songImageView.setImageResource(R.drawable.audio_image_2)
-            2 -> songImageView.setImageResource(R.drawable.audio_image_3)
-            3 -> songImageView.setImageResource(R.drawable.audio_image_4)
-            4 -> songImageView.setImageResource(R.drawable.audio_image_5)
+            0 -> {
+                songNameTextView.text = getString(R.string.song_alan_walker)
+                songImageView.setImageResource(R.drawable.audio_image_1)
+            }
+            1 -> {
+                songNameTextView.text = getString(R.string.song_blinding_lights)
+                songImageView.setImageResource(R.drawable.audio_image_2)
+            }
+            2 -> {
+                songNameTextView.text = getString(R.string.song_save_your_tears)
+                songImageView.setImageResource(R.drawable.audio_image_3)
+            }
+            3 -> {
+                songNameTextView.text = getString(R.string.song_con_calma)
+                songImageView.setImageResource(R.drawable.audio_image_4)
+            }
+            4 -> {
+                songNameTextView.text = getString(R.string.song_shape_of_you)
+                songImageView.setImageResource(R.drawable.audio_image_5)
+            }
         }
     }
 
     companion object {
+        // Método para crear una nueva instancia del fragmento y pasar la canción seleccionada
         fun newInstance(selectedSong: Int): FragmentMusicPlayer {
             val fragment = FragmentMusicPlayer()
             val args = Bundle()
