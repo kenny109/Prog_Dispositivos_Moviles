@@ -2,7 +2,7 @@ package com.example.p4_ejercicio2
 // Descripción: Fragmento para mostrar el reproductor de música con controles de reproducción y una barra de progreso
 // Autor: Kenny Luis Flores Chacón
 // Fecha de creación: 28-09-2024
-// Fecha de última modificación: 28-09-2024
+// Fecha de última modificación: 29-09-2024
 
 import android.media.MediaPlayer
 import android.os.Bundle

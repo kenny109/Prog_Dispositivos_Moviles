@@ -3,7 +3,7 @@ package com.example.p4_ejercicio2
 // Descripción: Actividad principal que maneja los fragmentos de selección de canción y reproducción de música
 // Autor: Kenny Luis Flores Chacón
 // Fecha de creación: 28-09-2024
-// Fecha de última modificación: 28-09-2024
+// Fecha de última modificación: 29-09-2024
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
