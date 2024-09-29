@@ -1,6 +1,6 @@
 // Descripción: Actividad principal que maneja los fragmentos de selección de imagen y visualización de imagen
 // Autor: Kenny Luis Flores Chacón
-// Fecha de creación: 19-09-2024
+// Fecha de creación: 28-09-2024
 // Fecha de última modificación: 28-09-2024
 
 package com.example.ejercicio1
@@ -9,6 +9,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.p4_ejercicio1.FragmentImage
 import com.example.p4_ejercicio1.FragmentSpinner
+import com.example.p4_ejercicio1.R
 
 class MainActivity : AppCompatActivity(), FragmentSpinner.OnImageSelectedListener {
 
