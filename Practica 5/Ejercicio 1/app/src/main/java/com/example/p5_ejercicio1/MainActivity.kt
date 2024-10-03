@@ -1,5 +1,8 @@
 package com.example.p5_ejercicio1
-
+// Descripción: Esta es la actividad principal que carga los fragments.
+// Autor: Kenny Luis Flores Chacón
+// Fecha de creación: 02-10-2024
+// Fecha de última modificación: 03-10-2024
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 

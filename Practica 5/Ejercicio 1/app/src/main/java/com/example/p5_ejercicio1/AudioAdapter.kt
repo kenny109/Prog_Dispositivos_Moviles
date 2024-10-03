@@ -1,5 +1,9 @@
 package com.example.p5_ejercicio1
-
+// Descripción: Este archivo gestiona el adaptador para el
+// RecyclerView que muestra la lista de audios.
+// Autor: Kenny Luis Flores Chacón
+// Fecha de creación: 02-10-2024
+// Fecha de última modificación: 03-10-2024
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,8 +30,8 @@ class AudioAdapter(
 
     override fun onBindViewHolder(holder: AudioViewHolder, position: Int) {
         val audioItem = audioList[position]
-        holder.nameView.text = audioItem.name
-        holder.imageView.setImageResource(audioItem.image)
+        holder.nameView.text = audioItem.audioName
+        holder.imageView.setImageResource(audioItem.audioImage)
         holder.durationView.text = audioItem.duration
         holder.itemView.setOnClickListener { listener(audioItem) }
     }

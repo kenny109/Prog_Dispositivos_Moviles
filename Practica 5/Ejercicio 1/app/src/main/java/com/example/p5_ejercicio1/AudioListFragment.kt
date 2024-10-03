@@ -1,5 +1,8 @@
 package com.example.p5_ejercicio1
-
+// Descripción: Este es el fragmento que muestra la lista de audios.
+// Autor: Kenny Luis Flores Chacón
+// Fecha de creación: 02-10-2024
+// Fecha de última modificación: 03-10-2024
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,7 +33,7 @@ class AudioListFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
 
         audioAdapter = AudioAdapter(audioList) { audioItem ->
-            val fragment = AudioPlayerFragment.newInstance(audioItem.name, audioItem.image, audioItem.audioFile)
+            val fragment = AudioPlayerFragment.newInstance(audioItem.audioName, audioItem.audioImage, audioItem.audioFile)
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.fragment_container, fragment)
                 ?.addToBackStack(null)

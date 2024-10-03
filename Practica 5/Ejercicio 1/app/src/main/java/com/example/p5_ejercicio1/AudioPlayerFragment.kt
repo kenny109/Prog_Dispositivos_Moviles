@@ -1,5 +1,8 @@
 package com.example.p5_ejercicio1
-
+// Descripción: Este fragmento gestiona la reproducción del audio.
+// Autor: Kenny Luis Flores Chacón
+// Fecha de creación: 02-10-2024
+// Fecha de última modificación: 03-10-2024
 
 import android.media.MediaPlayer
 import android.os.Bundle
