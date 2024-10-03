@@ -25,6 +25,10 @@ En esta práctica se extiende el trabajo realizado en la Práctica 3 para implem
 - **Ejercicio 1:** Aplicación con un `Spinner` en un `Fragment` para seleccionar imágenes. La imagen seleccionada se muestra en un segundo `Fragment` que reemplaza a la segunda actividad, incluyendo un botón para regresar a la pantalla anterior.
   
 - **Ejercicio 2:** Reproductor de música donde la selección de la canción se realiza en un `Fragment` con un `Spinner`. En un segundo `Fragment`, se gestiona la reproducción del audio, mostrando la imagen y nombre de la canción seleccionada, una barra de progreso (`SeekBar`) para la canción y botones para reproducir, pausar, y volver a la selección de canción.
+## Práctica 4: Implementación de Fragments
+-**Ejercicio 1**En este único ejercicio extendimos el trabajo realizado en la Práctica 4 sobre el ejercicio 2 del reproductor de música añadiendo el uso de `RecyclerView` al proyecto en AudioListFragment, para mostrar una lista de canciones con su imagen, nombre y duración, tambien se añadio un data class llamado AudioItem, para almacenar todos los valores requeridos.
+
+
 
 
 
